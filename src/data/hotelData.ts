@@ -46,11 +46,11 @@ export interface AttractionItem {
 }
 
 export const DEFAULT_IMAGES = {
-  heroSunsetExterior: '/src/assets/images/arish_hero_sunset_exterior_1791127568636.jpg',
-  daytimeGardenExterior: '/src/assets/images/arish_daytime_garden_exterior_1791127588942.jpg',
-  executiveSuiteWingback: '/src/assets/images/arish_executive_suite_interior_1791127607166.jpg',
-  deluxeSuiteVanity: '/src/assets/images/arish_deluxe_suite_vanity_1791127620505.jpg',
-  grandLoungeDining: '/src/assets/images/arish_grand_lounge_dining_1791127633600.jpg',
+  heroSunsetExterior: '/images/arish_hero_sunset_exterior_1791127568636.jpg',
+  daytimeGardenExterior: '/images/arish_daytime_garden_exterior_1791127588942.jpg',
+  executiveSuiteWingback: '/images/arish_executive_suite_interior_1791127607166.jpg',
+  deluxeSuiteVanity: '/images/arish_deluxe_suite_vanity_1791127620505.jpg',
+  grandLoungeDining: '/images/arish_grand_lounge_dining_1791127633600.jpg',
 };
 
 export const HOTEL_CONFIG = {
