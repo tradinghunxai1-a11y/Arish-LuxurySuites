@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function () {
+        try {
+          var currentFetch = typeof window.fetch === 'function' ? window.fetch.bind(window) : undefined;
+          var makeWritableAccessor = function (getterFn) {
+            var stored = undefined;
+            return {
+              configurable: true,
+              enumerable: true,
+              get: function () {
+                return stored !== undefined ? stored : getterFn ? getterFn.call(window) : currentFetch;
+              },
+              set: function (v) {
+                stored = v;
+                currentFetch = v;
+              },
+            };
+          };
+
+          var proto = window;
+          while (proto) {
+            var desc = Object.getOwnPropertyDescriptor(proto, 'fetch');
+            if (desc && desc.configurable !== false) {
+              if (desc.get && !desc.set) {
+                Object.defineProperty(proto, 'fetch', makeWritableAccessor(desc.get));
+              } else if ('value' in desc && !desc.writable) {
+                Object.defineProperty(proto, 'fetch', {
+                  configurable: true,
+                  enumerable: desc.enumerable !== false,
+                  writable: true,
+                  value: desc.value,
+                });
+              }
+            }
+            proto = Object.getPrototypeOf(proto);
+          }
+
+          var ownDesc = Object.getOwnPropertyDescriptor(window, 'fetch');
+          if (!ownDesc || (ownDesc.get && !ownDesc.set && ownDesc.configurable !== false)) {
+            Object.defineProperty(
+              window,
+              'fetch',
+              makeWritableAccessor(ownDesc && ownDesc.get ? ownDesc.get : function () { return currentFetch; })
+            );
+          }
+
+          var origDefineProperty = Object.defineProperty;
+          Object.defineProperty = function (obj, prop, descriptor) {
+            if (
+              (obj === window || (typeof Window !== 'undefined' && obj === Window.prototype)) &&
+              prop === 'fetch' &&
+              descriptor
+            ) {
+              if (descriptor.get && !descriptor.set) {
+                descriptor = makeWritableAccessor(descriptor.get);
+              } else if ('value' in descriptor && descriptor.writable === false) {
+                descriptor = Object.assign({}, descriptor, { writable: true, configurable: true });
+              }
+            }
+            return origDefineProperty.call(Object, obj, prop, descriptor);
+          };
+
+          if (typeof Reflect !== 'undefined' && Reflect.defineProperty) {
+            var origReflectDefine = Reflect.defineProperty;
+            Reflect.defineProperty = function (target, propertyKey, attributes) {
+              if (
+                (target === window || (typeof Window !== 'undefined' && target === Window.prototype)) &&
+                propertyKey === 'fetch' &&
+                attributes
+              ) {
+                if (attributes.get && !attributes.set) {
+                  attributes = makeWritableAccessor(attributes.get);
+                } else if ('value' in attributes && attributes.writable === false) {
+                  attributes = Object.assign({}, attributes, { writable: true, configurable: true });
+                }
+              }
+              return origReflectDefine.call(Reflect, target, propertyKey, attributes);
+            };
+          }
+        } catch (e) {
+          // Ignore if environment restricts defineProperty
+        }
+      })();
+    </script>
+    <title>Arish Luxury Suites — 4-Star Luxury Hotel in Skardu, Pakistan</title>
+    <meta
+      name="description"
+      content="Experience refined 4-star hospitality at Arish Luxury Suites in Olding, Skardu. Rated 4.7/5 from 165 Google reviews. Book directly via WhatsApp for the best rates."
+    />
+    <meta
+      name="keywords"
+      content="Arish Luxury Suites, Arish Luxury Suites Skardu, Hotels in Skardu, Luxury hotel in Skardu, 4 star hotel Skardu, Suites in Skardu, Best hotels in Skardu, Skardu accommodation, Family hotel Skardu, Hotel near Skardu"
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://ais-pre-5x7hvandskhl4oy7yvald6-118239866710.asia-east1.run.app/" />
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Arish Luxury Suites" />
+    <meta property="og:title" content="Arish Luxury Suites — 4-Star Luxury Hotel in Skardu, Pakistan" />
+    <meta
+      property="og:description"
+      content="Discover a peaceful 4-star retreat in the heart of Skardu. Rated 4.7/5 on Google (165 reviews). Contact directly via WhatsApp for room availability and rates."
+    />
+    <meta property="og:locale" content="en_PK" />
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Arish Luxury Suites — 4-Star Luxury Hotel in Skardu" />
+    <meta
+      name="twitter:description"
+      content="Experience refined hospitality surrounded by the extraordinary beauty of Skardu. 4.7/5 Google rating across 165 reviews. Book directly on WhatsApp."
+    />
+
+    <!-- Google Fonts: Cormorant Garamond (Display), Plus Jakarta Sans (Body), JetBrains Mono (Tabular Numerals) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Schema.org Hotel & FAQPage Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Hotel",
+            "@id": "#hotel",
+            "name": "Arish Luxury Suites",
+            "description": "Discover a peaceful 4-star retreat in the heart of Skardu. Arish Luxury Suites combines contemporary comfort, warm hospitality and convenient access to the spectacular landscapes of Gilgit-Baltistan.",
+            "starRating": {
+              "@type": "Rating",
+              "ratingValue": "4"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.7",
+              "bestRating": "5",
+              "reviewCount": "165"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "572 Sumbul Town, Olding",
+              "addressLocality": "Skardu",
+              "addressRegion": "Gilgit-Baltistan",
+              "postalCode": "16100",
+              "addressCountry": "PK"
+            },
+            "telephone": "+92 346 4166614",
+            "checkinTime": "14:00",
+            "checkoutTime": "12:00",
+            "priceRange": "Rates from PKR 22,000 (subject to availability and date)",
+            "hasMap": "https://www.google.com/maps/search/?api=1&query=Arish+Luxury+Suites+572+Sumbul+Town+Olding+Skardu+16100+Pakistan"
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What time is check-in?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Check-in begins at 2:00 PM."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What time is check-out?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Check-out is at 12:00 PM."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is breakfast included?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "The supplied current listing indicates complimentary breakfast. Guests should confirm the latest package when booking."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How can I make a reservation?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Guests can contact Arish Luxury Suites directly by phone or WhatsApp at +92 346 4166614."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Where is Arish Luxury Suites located?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "572 Sumbul Town, Olding, Skardu, 16100, Gilgit-Baltistan, Pakistan (Plus Code: 7JMW+24 Skardu)."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can I confirm current rates through WhatsApp?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. Guests can contact the hotel directly via WhatsApp at +92 346 4166614 to confirm availability and current rates."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body class="bg-[#F8F6F1] text-[#1C1B19] antialiased selection:bg-[#8C6D46]/20 selection:text-[#1C1B19]">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
